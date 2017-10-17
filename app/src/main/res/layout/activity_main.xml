@@ -7,7 +7,7 @@
     tools:context="com.anny.bmi.MainActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/ed_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ed_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -35,9 +35,9 @@
         android:ems="10"
         android:inputType="numberSigned"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/ed_weight"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/textView" />
+        app:layout_constraintLeft_toLeftOf="@+id/ed_weight" />
 
     <EditText
         android:id="@+id/editText3"
@@ -46,12 +46,12 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/ed_height"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/textView3" />
+        app:layout_constraintLeft_toLeftOf="@+id/ed_height" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/b_bmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -60,12 +60,13 @@
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/b_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="6dp"
         android:text="INFO"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:layout_editor_absoluteX="32dp" />
+        app:layout_constraintLeft_toLeftOf="@+id/b_bmi"
+        app:layout_constraintTop_toBottomOf="@+id/b_bmi" />
 
 </android.support.constraint.ConstraintLayout>
