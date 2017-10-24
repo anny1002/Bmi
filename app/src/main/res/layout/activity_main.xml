@@ -7,66 +7,69 @@
     tools:context="com.anny.bmi.MainActivity">
 
     <TextView
-        android:id="@+id/ed_height"
+        android:id="@+id/testView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="0dp"
         android:text="Height"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintLeft_toLeftOf="@+id/ed_weight"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/ed_weight" />
 
     <TextView
-        android:id="@+id/ed_weight"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:text="Weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/ed_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberSigned"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/ed_weight"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/ed_weight" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/ed_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/ed_height"
         android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/ed_height" />
+        app:layout_constraintLeft_toLeftOf="@+id/testView"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/testView" />
 
     <Button
         android:id="@+id/b_bmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="CALCUATE BMI"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        tools:layout_editor_absoluteX="32dp" />
+        android:text="CALCULATE BMI"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/ed_height"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/ed_height" />
 
     <Button
         android:id="@+id/b_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="6dp"
         android:text="INFO"
-        app:layout_constraintLeft_toLeftOf="@+id/b_bmi"
-        app:layout_constraintTop_toBottomOf="@+id/b_bmi" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/b_bmi"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/b_bmi" />
 
 </android.support.constraint.ConstraintLayout>
