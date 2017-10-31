@@ -1,10 +1,12 @@
 package com.anny.bmi;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,5 +27,15 @@ public class MainActivity extends AppCompatActivity {
         float height= Float.parseFloat(edHeight.getText().toString());
         float bmi=weight / (height*height);
         Log.d("MainActivity","Your bmi is"+bmi);
-    }
-}
+        new AlertDialog.Builder(this)
+                .setMessage("Your BMI is" +bmi)
+                .setTitle("my title")
+                .setPositiveButton("OK",null)
+                .show();
+      /*  Toast.makeText(this,
+                "Your bmi is"+bmi,
+                Toast.LENGTH_LONG)
+                .show();*/
+
+        }
+        }
