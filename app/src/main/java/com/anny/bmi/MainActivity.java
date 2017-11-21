@@ -1,5 +1,6 @@
 package com.anny.bmi;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +12,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText edWeight;
+    private EditText edHeight;
+    private Button bHelp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button bHelp= (Button) findViewById(R.id.b_help);
+        findViews();
+        //ctrl +alt+f 快速鍵
         bHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,18 +34,59 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         getResources().getString(R.string.app_name);
+        Log.d("MainActivity","onCreate");
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity","onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity","onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("MainActivity","onDestroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity","onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity","onResume");
+    }
+
+    private void findViews() {
+        edWeight = (EditText) findViewById(R.id.ed_weight);
+        edHeight = (EditText) findViewById(R.id.ed_height);
+        bHelp = (Button) findViewById(R.id.b_help);
+    }
+    //ctrl+alt+m (method)快速建好方法,並呼叫--->在refactor的extract\裡
+
     public void bmi(View view){
         //sout=System.out.println();
         Log.d("MainActivity","testing bmi method");
         Log.e("MainActivity","testing bmi method");
         Log.i("MainActivity","testing bmi method");
         Log.w("MainActivity","testing bmi method");
-        EditText edWeight= (EditText) findViewById(R.id.ed_weight);
-        EditText edHeight= (EditText) findViewById(R.id.ed_height);
         float weight= Float.parseFloat(edWeight.getText().toString());
         float height= Float.parseFloat(edHeight.getText().toString());
         float bmi=weight / (height*height);
+        Intent intent = new Intent(this,ResultActivity.class);
+        intent.putExtra(getString(R.string.bmi_extra),bmi);
+        startActivity(intent);
         Log.d("MainActivity","Your bmi is"+bmi);
         if (height>3){
             new AlertDialog.Builder(this)

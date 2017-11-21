@@ -7,4 +7,5 @@
     <string name="info">說明</string>
     <string name="weight">體重(公斤)</string>
     <string name="your_bmi_is_">您的BMI是:</string>
+    <string name="bmi_extra">BMI_EXTRA</string>
 </resources>
